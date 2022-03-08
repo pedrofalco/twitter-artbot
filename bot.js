@@ -4,6 +4,7 @@ console.log('--Bot is live');
 const dotenv = require('dotenv').config();
 const Twit = require('twit');
 const fetch = require('node-fetch');
+const schedule = require('node-schedule');
 const b64 = require('fetch-base64');
 const T = new Twit({
     consumer_key: process.env.API_KEY,
@@ -11,6 +12,7 @@ const T = new Twit({
     access_token: process.env.ACCESS_TOKEN,
     access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
+
 
 const artblocks_contract = '0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270';
 const superrare_contract = '0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0';
@@ -22,9 +24,14 @@ let platform;
 let collection;
 let keyword;
 
+const job = schedule.scheduleJob({
+    hour: 11,
+    minute: 30
+}, () => {
 
-buildTweet();
-setInterval(buildTweet, 60000 * 60 * 24);
+    buildTweet();
+});
+
 
 async function buildTweet() {
     randomCollection();
@@ -178,7 +185,7 @@ function randomCollection() {
     const FOLIAGE = {
         min_token: 270000000,
         // max_token: 270000625
-        max_token: 270000077
+        max_token: 270000083
     };
 
     const ASTERISMS = {
