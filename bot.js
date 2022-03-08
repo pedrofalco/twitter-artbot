@@ -25,7 +25,7 @@ let collection;
 let keyword;
 
 const job = schedule.scheduleJob({
-    hour: 11,
+    hour: 19,
     minute: 30
 }, () => {
 
