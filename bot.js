@@ -25,8 +25,8 @@ let collection;
 let keyword;
 
 const job = schedule.scheduleJob({
-    hour: 22,
-    minute: 30
+    hour: 14,
+    minute: 00
 }, () => {
 
     buildTweet();
