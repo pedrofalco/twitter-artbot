@@ -1,4 +1,4 @@
-// // BOT.js
+// BOT.js
 console.log('--Bot is live');
 
 const dotenv = require('dotenv').config();
@@ -13,16 +13,10 @@ const T = new Twit({
     access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
+const artblocks_contract = process.env.ARTBLOCKS_CONTRACT;
+const superrare_contract = process.env.SUPERRARE_CONTRACT;
 
-const artblocks_contract = '0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270';
-const superrare_contract = '0xb932a70a57673d89f4acffbe830e8ed7f75fb9e0';
-
-const SUPERRARE_TOKEN = [12303, 12489, 12725, 13027, 13423, 13663, 13892, 14228, 14476, 14817, 15319, 15973, 16745, 17371, 19291, 26906];
-
-let token_id;
-let platform;
-let collection;
-let keyword;
+let token_id, platform, collection, keyword;
 
 const job = schedule.scheduleJob({
     hour: 14,
@@ -148,12 +142,8 @@ function tweetArtwork(img, title, type, dimensions, url, os_url, year) {
             media_data: jpg[0]
         }, function(err, data, response) {
             var mediaIdStr = data.media_id_string
-                // var altText = "Small flowers in a planter on a sunny balcony, blossoming."
             var meta_params = {
                 media_id: mediaIdStr,
-                // alt_text: {
-                //     text: altText
-                // }
             }
 
             T.post('media/metadata/create', meta_params, function(err, data, response) {
