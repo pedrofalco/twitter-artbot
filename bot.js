@@ -37,6 +37,8 @@ async function buildTweet() {
         artwork = await getSuperRare()
     };
 
+    console.log("Artwork picked", artwork);
+
     await tweetArtwork(artwork.image, artwork.name, artwork.output, artwork.dimension, artwork.url, artwork.os_url, artwork.year);
 };
 
@@ -180,7 +182,7 @@ function randomCollection() {
 
     const ASTERISMS = {
         min_token: 47000000,
-        max_token: 47000100
+        max_token: 47000099
     };
 
     if (platform === 'Artblocks') {
