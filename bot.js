@@ -19,23 +19,12 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 12;
-// rule.minute = 00;
+rule.hour = 11;
 rule.tz = 'Etc/GMT+3';
 
 const job = schedule.scheduleJob(rule, () => {
     buildTweet();
 });
-
-// const job = schedule.scheduleJob({
-//     hour: 14,
-//     minute: 4
-// }, () => {
-
-//     buildTweet();
-// });
-// buildTweet();
-
 
 async function buildTweet() {
     randomCollection();
