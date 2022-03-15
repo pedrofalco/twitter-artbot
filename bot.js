@@ -19,12 +19,51 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 11;
+rule.hour = 12;
+rule.minute = 32
 rule.tz = 'Etc/GMT+3';
+const rule2 = new schedule.RecurrenceRule();
+rule2.hour = 12;
+rule2.minute = 33
+rule2.tz = 'Etc/GMT+3';
+const rule3 = new schedule.RecurrenceRule();
+rule3.hour = 12;
+rule3.minute = 34
+rule3.tz = 'Etc/GMT+3';
+const rule4 = new schedule.RecurrenceRule();
+rule4.hour = 12;
+rule4.minute = 35
+rule4.tz = 'Etc/GMT+3';
 
-const job = schedule.scheduleJob(rule, () => {
-    buildTweet();
-});
+try {
+    const job = schedule.scheduleJob(rule, () => {
+        buildTweet();
+    });
+} catch (error) {
+    console.error(error)
+}
+try {
+    const job2 = schedule.scheduleJob(rule, () => {
+        buildTweet();
+    });
+} catch (error) {
+    console.error(error)
+}
+try {
+    const job3 = schedule.scheduleJob(rule, () => {
+        buildTweet();
+    });
+} catch (error) {
+    console.error(error)
+}
+try {
+    const job4 = schedule.scheduleJob(rule, () => {
+        buildTweet();
+    });
+} catch (error) {
+    console.error(error)
+}
+
 
 async function buildTweet() {
     randomCollection();
@@ -56,6 +95,7 @@ async function getArtblocks() {
     const response = await fetch(url, options);
     const data = await response.json();
 
+    console.log('uri', data.token_uri)
     const uri = await fetch(data.token_uri);
     const artwork = await uri.json();
 
@@ -154,10 +194,10 @@ function tweetArtwork(img, title, type, dimensions, url, os_url, year) {
                         media_ids: [mediaIdStr]
                     }
 
-                    T.post('statuses/update', params, function(err, data, response) {
-                        // console.log(data);
-                        console.log('Tweeted it!');
-                    })
+                    // T.post('statuses/update', params, function(err, data, response) {
+                    //     // console.log(data);
+                    //     console.log('Tweeted it!');
+                    // })
                     console.log('Succeded!');
                     console.log(params.status)
                 }
