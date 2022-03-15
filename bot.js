@@ -18,52 +18,52 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 
 let token_id, platform, collection, keyword;
 
-const rule = new schedule.RecurrenceRule();
-rule.hour = 13;
-rule.minute = 7
-rule.tz = 'Etc/GMT+3';
-const rule2 = new schedule.RecurrenceRule();
-rule2.hour = 13;
-rule2.minute = 8
-rule2.tz = 'Etc/GMT+3';
-const rule3 = new schedule.RecurrenceRule();
-rule3.hour = 13;
-rule3.minute = 9
-rule3.tz = 'Etc/GMT+3';
-const rule4 = new schedule.RecurrenceRule();
-rule4.hour = 13;
-rule4.minute = 0
-rule4.tz = 'Etc/GMT+3';
+// const rule = new schedule.RecurrenceRule();
+// rule.hour = 13;
+// rule.minute = 7
+// rule.tz = 'Etc/GMT+3';
+// const rule2 = new schedule.RecurrenceRule();
+// rule2.hour = 13;
+// rule2.minute = 8
+// rule2.tz = 'Etc/GMT+3';
+// const rule3 = new schedule.RecurrenceRule();
+// rule3.hour = 13;
+// rule3.minute = 9
+// rule3.tz = 'Etc/GMT+3';
+// const rule4 = new schedule.RecurrenceRule();
+// rule4.hour = 13;
+// rule4.minute = 0
+// rule4.tz = 'Etc/GMT+3';
 
-try {
-    const job = schedule.scheduleJob(rule, () => {
-        buildTweet();
-    });
-} catch (error) {
-    console.error(error)
-}
-try {
-    const job2 = schedule.scheduleJob(rule, () => {
-        buildTweet();
-    });
-} catch (error) {
-    console.error(error)
-}
-try {
-    const job3 = schedule.scheduleJob(rule, () => {
-        buildTweet();
-    });
-} catch (error) {
-    console.error(error)
-}
-try {
-    const job4 = schedule.scheduleJob(rule, () => {
-        buildTweet();
-    });
-} catch (error) {
-    console.error(error)
-}
-// buildTweet();
+// try {
+//     const job = schedule.scheduleJob(rule, () => {
+//         buildTweet();
+//     });
+// } catch (error) {
+//     console.error(error)
+// }
+// try {
+//     const job2 = schedule.scheduleJob(rule, () => {
+//         buildTweet();
+//     });
+// } catch (error) {
+//     console.error(error)
+// }
+// try {
+//     const job3 = schedule.scheduleJob(rule, () => {
+//         buildTweet();
+//     });
+// } catch (error) {
+//     console.error(error)
+// }
+// try {
+//     const job4 = schedule.scheduleJob(rule, () => {
+//         buildTweet();
+//     });
+// } catch (error) {
+//     console.error(error)
+// }
+buildTweet();
 
 
 async function buildTweet() {
