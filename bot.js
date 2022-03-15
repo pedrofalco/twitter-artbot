@@ -3,7 +3,7 @@ console.log('--Bot is live');
 
 const dotenv = require('dotenv').config();
 const Twit = require('twit');
-const fetch = require('isomorphic-fetch');
+const axios = require('axios');
 const schedule = require('node-schedule');
 const b64 = require('fetch-base64');
 const T = new Twit({
@@ -19,20 +19,20 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 12;
-rule.minute = 47
+rule.hour = 13;
+rule.minute = 7
 rule.tz = 'Etc/GMT+3';
 const rule2 = new schedule.RecurrenceRule();
-rule2.hour = 12;
-rule2.minute = 48
+rule2.hour = 13;
+rule2.minute = 8
 rule2.tz = 'Etc/GMT+3';
 const rule3 = new schedule.RecurrenceRule();
-rule3.hour = 12;
-rule3.minute = 49
+rule3.hour = 13;
+rule3.minute = 9
 rule3.tz = 'Etc/GMT+3';
 const rule4 = new schedule.RecurrenceRule();
-rule4.hour = 12;
-rule4.minute = 50
+rule4.hour = 13;
+rule4.minute = 0
 rule4.tz = 'Etc/GMT+3';
 
 try {
@@ -63,7 +63,6 @@ try {
 } catch (error) {
     console.error(error)
 }
-
 // buildTweet();
 
 
@@ -94,12 +93,16 @@ async function getArtblocks() {
 
     const url = `https://deep-index.moralis.io/api/v2/nft/${artblocks_contract}/${token_id}?chain=eth&format=decimal`;
 
-    const response = await fetch(url, options);
-    const data = await response.json();
+    const response = await axios.get(url, options);
+    const data = response.data;
 
-    console.log('uri', data.token_uri)
-    const uri = await fetch(data.token_uri);
-    const artwork = await uri.json();
+    // const data = await response.json();
+    // console.log('data', data)
+
+    const uri = await axios.get(data.token_uri);
+    // const artwork = await uri.json();
+    const artwork = uri.data;
+    // console.log('artwork', artwork)
 
     const toTwitter = {
         image: artwork.image,
@@ -133,14 +136,17 @@ async function getSuperRare() {
 
     const url = `https://deep-index.moralis.io/api/v2/nft/search?chain=eth&format=decimal&q=%5C%22createdBy%5C%22%3A%5C%22${token_id}%5C%22`;
 
-    const response = await fetch(url, options);
-    const data = await response.json();
+    const response = await axios.get(url, options);
+    const data = response.data;
+
+    // const data = await response.json();
 
 
     const index = randomRange(0, data.result.length - 1);
 
-    const uri = await fetch(data.result[index].token_uri);
-    const artwork = await uri.json();
+    const uri = await axios.get(data.result[index].token_uri);
+    const artwork = uri.data;
+    // const artwork = await uri.json();
     const id = data.result[index].token_id;
 
     let name_dash = artwork.name;
