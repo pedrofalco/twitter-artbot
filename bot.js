@@ -18,53 +18,17 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 
 let token_id, platform, collection, keyword;
 
-// const rule = new schedule.RecurrenceRule();
-// rule.hour = 13;
-// rule.minute = 7
-// rule.tz = 'Etc/GMT+3';
-// const rule2 = new schedule.RecurrenceRule();
-// rule2.hour = 13;
-// rule2.minute = 8
-// rule2.tz = 'Etc/GMT+3';
-// const rule3 = new schedule.RecurrenceRule();
-// rule3.hour = 13;
-// rule3.minute = 9
-// rule3.tz = 'Etc/GMT+3';
-// const rule4 = new schedule.RecurrenceRule();
-// rule4.hour = 13;
-// rule4.minute = 0
-// rule4.tz = 'Etc/GMT+3';
+const rule = new schedule.RecurrenceRule();
+rule.hour = 11;
+rule.tz = 'Etc/GMT+3';
 
-// try {
-//     const job = schedule.scheduleJob(rule, () => {
-//         buildTweet();
-//     });
-// } catch (error) {
-//     console.error(error)
-// }
-// try {
-//     const job2 = schedule.scheduleJob(rule, () => {
-//         buildTweet();
-//     });
-// } catch (error) {
-//     console.error(error)
-// }
-// try {
-//     const job3 = schedule.scheduleJob(rule, () => {
-//         buildTweet();
-//     });
-// } catch (error) {
-//     console.error(error)
-// }
-// try {
-//     const job4 = schedule.scheduleJob(rule, () => {
-//         buildTweet();
-//     });
-// } catch (error) {
-//     console.error(error)
-// }
-buildTweet();
-
+try {
+    const job = schedule.scheduleJob(rule, () => {
+        buildTweet();
+    });
+} catch (error) {
+    console.error(error)
+};
 
 async function buildTweet() {
     randomCollection();
@@ -96,13 +60,8 @@ async function getArtblocks() {
     const response = await axios.get(url, options);
     const data = response.data;
 
-    // const data = await response.json();
-    // console.log('data', data)
-
     const uri = await axios.get(data.token_uri);
-    // const artwork = await uri.json();
     const artwork = uri.data;
-    // console.log('artwork', artwork)
 
     const toTwitter = {
         image: artwork.image,
@@ -139,14 +98,10 @@ async function getSuperRare() {
     const response = await axios.get(url, options);
     const data = response.data;
 
-    // const data = await response.json();
-
-
     const index = randomRange(0, data.result.length - 1);
 
     const uri = await axios.get(data.result[index].token_uri);
     const artwork = uri.data;
-    // const artwork = await uri.json();
     const id = data.result[index].token_id;
 
     let name_dash = artwork.name;
@@ -202,10 +157,10 @@ function tweetArtwork(img, title, type, dimensions, url, os_url, year) {
                         media_ids: [mediaIdStr]
                     }
 
-                    // T.post('statuses/update', params, function(err, data, response) {
-                    //     // console.log(data);
-                    //     console.log('Tweeted it!');
-                    // })
+                    T.post('statuses/update', params, function(err, data, response) {
+                        // console.log(data);
+                        console.log('Tweeted it!');
+                    })
                     console.log('Succeded!');
                     console.log(params.status)
                 }
@@ -224,7 +179,7 @@ function randomCollection() {
     const FOLIAGE = {
         min_token: 270000000,
         // max_token: 270000625
-        max_token: 270000083
+        max_token: 270000086
     };
 
     const ASTERISMS = {
