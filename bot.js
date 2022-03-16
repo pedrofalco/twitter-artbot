@@ -22,13 +22,10 @@ const rule = new schedule.RecurrenceRule();
 rule.hour = 11;
 rule.tz = 'Etc/GMT+3';
 
-try {
-    const job = schedule.scheduleJob(rule, () => {
-        buildTweet();
-    });
-} catch (error) {
-    console.error(error)
-};
+
+const job = schedule.scheduleJob(rule, () => {
+    buildTweet();
+});
 
 async function buildTweet() {
     randomCollection();
