@@ -20,6 +20,7 @@ let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
 rule.hour = 11;
+rule.minute = 0;
 rule.tz = 'Etc/GMT+3';
 
 
@@ -154,10 +155,10 @@ function tweetArtwork(img, title, type, dimensions, url, os_url, year) {
                         media_ids: [mediaIdStr]
                     }
 
-                    T.post('statuses/update', params, function(err, data, response) {
-                        // console.log(data);
-                        console.log('Tweeted it!');
-                    })
+                    // T.post('statuses/update', params, function(err, data, response) {
+                    //     // console.log(data);
+                    //     console.log('Tweeted it!');
+                    // })
                     console.log('Succeded!');
                     console.log(params.status)
                 }
