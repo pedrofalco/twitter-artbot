@@ -19,8 +19,8 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 12;
-rule.minute = 02;
+rule.hour = 11;
+rule.minute = 0;
 rule.tz = 'Etc/GMT+3';
 
 
