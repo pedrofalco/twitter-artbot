@@ -20,7 +20,7 @@ let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
 rule.hour = 11;
-rule.minute = 0;
+rule.minute = 42;
 rule.tz = 'Etc/GMT+3';
 
 
