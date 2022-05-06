@@ -20,7 +20,7 @@ let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
 rule.hour = 11;
-rule.minute = 42;
+rule.minute = 30;
 rule.tz = 'Etc/GMT+3';
 
 
@@ -177,7 +177,7 @@ function randomCollection() {
     const FOLIAGE = {
         min_token: 270000000,
         // max_token: 270000625
-        max_token: 270000086
+        max_token: 270000099
     };
 
     const ASTERISMS = {
