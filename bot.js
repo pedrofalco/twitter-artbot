@@ -176,8 +176,7 @@ function randomCollection() {
     })
     const FOLIAGE = {
         min_token: 270000000,
-        // max_token: 270000250
-        max_token: 270000209
+        max_token: 270000249
     };
 
     const ASTERISMS = {
