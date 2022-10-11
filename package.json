@@ -4,16 +4,10 @@
     "description": "An artbot to daily tweet my works",
     "main": "bot.js",
     "scripts": {
-    "start": "node --max-old-space-size=0512 bot.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node --max-old-space-size=0512 bot.js",
     },
-    "keywords": [
-        "artbot",
-        "twitter",
-        "art"
-    ],
     "author": "Pedro Falco",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "axios": "^0.26.1",
         "dotenv": "^16.0.0",
