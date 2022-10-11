@@ -7,7 +7,7 @@
         "start": "node --max-old-space-size=0512 bot.js"
     },
     "author": "Pedro Falco",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "axios": "^0.26.1",
         "dotenv": "^16.0.0",
