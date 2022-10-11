@@ -8,7 +8,7 @@ Un bot que recoge data aleatoriamente de la blockchain de Ethereum y la publica 
 
 2. Instalar las dependencias en la carpeta de destino ejecutando en la consola `npm i` o manualmente `npm i axios dotenv fetch-base64 node-schedule twit`.
 
-3. Generar las API keys de https://twitter.com/home y https://moralis.io/. 
+3. Generar las API keys de [Twitter](https://twitter.com/home) y [Moralis](https://moralis.io/). 
 
 `.env_samples`: Cambiar el nombre del archivo `.env_samples` por `.env` y completar con las llaves propias.
 
@@ -27,7 +27,7 @@ A bot that randomly collects data from the Ethereum blockchain and publishes it 
 
 2. Install the dependencies on your folder by running `npm i` or manually `npm i axios dotenv fetch-base64 node-schedule twit`.
 
-3. Generate API keys on <https://twitter.com/home> and https://moralis.io/. 
+3. Generate API keys on [Twitter](https://twitter.com/home) and [Moralis](https://moralis.io/). 
 
 `.env_samples`: change the file name `.env_samples` to `.env` and complete each field with your own keys.
 
