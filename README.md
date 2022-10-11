@@ -27,7 +27,7 @@ A bot that randomly collects data from the Ethereum blockchain and publishes it 
 
 2. Install the dependencies on your folder by running `npm i` or manually `npm i axios dotenv fetch-base64 node-schedule twit`.
 
-3. Generate API keys on https://twitter.com/home and https://moralis.io/. 
+3. Generate API keys on <https://twitter.com/home> and https://moralis.io/. 
 
 `.env_samples`: change the file name `.env_samples` to `.env` and complete each field with your own keys.
 
@@ -35,4 +35,4 @@ A bot that randomly collects data from the Ethereum blockchain and publishes it 
 
 >Note: There are two works of mine which covers have been saved in .gif format in IPFS. These images I could not encode via b64 so I had to load them manually into the 'media' folder. The rest of the images are hosted in IPFS and are accessed via the URI token. If your bot does not require the use of .gif you can skip that folder.
 
-:satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite:
+:satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite::satellite:
