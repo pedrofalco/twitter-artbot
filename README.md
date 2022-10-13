@@ -2,7 +2,7 @@
 
 
 `ES` 
-Un bot que recoge data aleatoriamente de la blockchain de [Ethereum](https://etherscan.io/) y la publica en [Twitter](https://twitter.com/home). Funciona conectado a la API de [Moralis](https://moralis.io/) y [Twitter](https://twitter.com/home). Sentite libre de modificarlo con tu data. 
+Un bot que recoge mi data aleatoriamente de la blockchain de [Ethereum](https://etherscan.io/) y la publica en [Twitter](https://twitter.com/home). Funciona conectado a la API de [Moralis](https://moralis.io/) y [Twitter](https://twitter.com/home). Sentite libre de modificarlo con tu data. 
 
 1. Descargar o clonar el repositorio en tu computadora.
 
@@ -21,7 +21,7 @@ Un bot que recoge data aleatoriamente de la blockchain de [Ethereum](https://eth
 
 
 `EN` 
-A bot that randomly collects data from the [Ethereum](https://etherscan.io/) blockchain and publishes it on [Twitter](https://twitter.com/home). It works connected to the [Moralis](https://moralis.io/) and [Twitter](https://twitter.com/home) API. Feel free to modify it with your data. 
+A bot that randomly collects my data from the [Ethereum](https://etherscan.io/) blockchain and publishes it on [Twitter](https://twitter.com/home). It works connected to the [Moralis](https://moralis.io/) and [Twitter](https://twitter.com/home) API. Feel free to modify it with your data. 
 
 1. Download or clone the repo on your computer.
 
