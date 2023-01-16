@@ -19,13 +19,13 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 11;
-rule.minute = 30;
-rule.tz = 'Etc/GMT+3';
+rule.hour = 12;
+rule.minute = 00;
+rule.tz ='America/Argentina/Buenos_Aires';
 
 
 const job = schedule.scheduleJob(rule, () => {
-    buildTweet();
+      buildTweet();
 });
 
 async function buildTweet() {
