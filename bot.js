@@ -24,9 +24,9 @@ rule.minute = 15;
 rule.tz = 'Etc/GMT+3';
 
 
-const job = schedule.scheduleJob(rule, () => {
+// const job = schedule.scheduleJob(rule, () => {
     buildTweet();
-});
+// });
 
 async function buildTweet() {
     randomCollection();
