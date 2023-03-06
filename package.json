@@ -4,7 +4,7 @@
     "description": "An artbot to daily tweet my works",
     "main": "bot.js",
     "scripts": {
-        "start": "node --max-old-space-size=0512 bot.js"
+        "start": "node bot.js"
     },
     "author": "Pedro Falco",
     "license": "MIT",
