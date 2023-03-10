@@ -1,11 +1,15 @@
 // BOT.js
 console.log('--Bot is live');
 
-const dotenv = require('dotenv').config();
-const Twit = require('twit');
-const axios = require('axios');
-const schedule = require('node-schedule');
-const b64 = require('fetch-base64');
+import dotenv from 'dotenv';
+import Twit from 'twit';
+import axios from 'axios';
+import schedule from 'node-schedule';
+import b64 from 'fetch-base64';
+import schedule from '@netlify/functions';
+
+dotenv.config();
+
 const T = new Twit({
     consumer_key: process.env.API_KEY,
     consumer_secret: process.env.API_SECRET_KEY,
@@ -19,14 +23,14 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 10;
-rule.minute = 15;
+rule.hour = 11;
+rule.minute = 30;
 rule.tz = 'Etc/GMT+3';
 
 buildTweet();
-const job = schedule.scheduleJob(rule, () => {
-    buildTweet();
-});
+// const job = schedule.scheduleJob(rule, () => {
+// buildTweet();
+// });
 
 async function buildTweet() {
     randomCollection();

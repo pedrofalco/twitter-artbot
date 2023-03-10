@@ -6,9 +6,11 @@
     "scripts": {
         "start": "node --max-old-space-size=4096 bot.js"
     },
+    "type": "module",
     "author": "Pedro Falco",
     "license": "MIT",
     "dependencies": {
+        "@netlify/functions": "^1.4.0",
         "axios": "^0.26.1",
         "dotenv": "^16.0.0",
         "fetch-base64": "^2.1.2",
