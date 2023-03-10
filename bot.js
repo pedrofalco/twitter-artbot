@@ -23,7 +23,7 @@ rule.hour = 10;
 rule.minute = 15;
 rule.tz = 'Etc/GMT+3';
 
-
+buildTweet();
 const job = schedule.scheduleJob(rule, () => {
     buildTweet();
 });
