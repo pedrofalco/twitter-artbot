@@ -22,15 +22,15 @@ const superrare_contract = process.env.SUPERRARE_CONTRACT;
 let token_id, platform, collection, keyword;
 
 const rule = new schedule.RecurrenceRule();
-rule.hour = 15;
+rule.hour = 16;
 rule.minute = 15;
 rule.tz = 'Etc/GMT+3';
 
 buildTweet();
 
-const job = schedule.scheduleJob(rule, () => {
-    buildTweet();
-});
+// const job = schedule.scheduleJob(rule, () => {
+//     buildTweet();
+// });
 
 async function buildTweet() {
     randomCollection();
@@ -61,12 +61,13 @@ async function getArtblocks() {
 
     const response = await axios.get(url, options);
     const data = response.data;
-
+    
+    
     const uri = await axios.get(data.token_uri);
     const artwork = uri.data;
 
     const toTwitter = {
-        image: artwork.image,
+        image: `https://artblocks-mainnet.s3.amazonaws.com/${token_id}.png`,
         name: artwork.name,
         artist: artwork.artist,
         dimension: 'Variable',
@@ -143,7 +144,7 @@ function tweetArtwork(img, title, type, dimensions, url, os_url, year) {
 
     b64.auto(img).then((jpg) => {
         console.log('Encoded!');
-
+        
         T.post('media/upload', {
             media_data: jpg[0]
         }, function(err, data, response) {
